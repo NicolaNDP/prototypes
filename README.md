@@ -4,14 +4,13 @@
 This Max/MSP Gen~ codebox implements a dynamic compressor that adjusts the amplitude of an input signal in real-time, according to the peak level measurement of the incoming signal. It includes the parameters for controlling threshold, ratio, hold time, release time, attack time, gain adjustment, and dry/wet mix trough the GUI interface. The compressor can also function as a peak limiter. Based on feedback design compressor where `reduction = ((sig-T)*(1/r)+T)/sig`.
 
 ## Parameters
-### T (Threshold)
-### r (Ratio)
-### hold (Hold Time)
-### release (Release Time)
-### attack (Attack Time)
-### sensibility
-### gain (Gain Adjustment)
-### compression (Dry/Wet Mix)
+- T (Threshold)
+- r (Ratio)
+- hold (Hold Time)
+- release (Release Time)
+- attack (Attack Time)
+- gain (Gain Adjustment)
+- compression (Dry/Wet Mix)
 
 ## Variables
 - `proc_reduction`: Variable for processed reduction
