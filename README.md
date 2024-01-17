@@ -35,7 +35,7 @@ This Max/MSP Gen~ codebox implements a dynamic compressor that adjusts the ampli
 8. **Output:** Provide the final processed signal and the visualization of the reduction envelope.
 
 ## Usage
-Download and open in Max MSP.
+Download and open in [Max MSP](https://cycling74.com/products/max).
 
 ## DSP Code
 
@@ -59,7 +59,7 @@ rls = release; //variable for release time
 
 //envelope from signal level//
 sig = r==60 ?
-	abs(in1) : //not smoothed envelope, in case of limiter
+	abs(in1) :
 		slide(abs(in1),sensibility,sensibility);
 
 //reduction algorithm//
@@ -121,4 +121,4 @@ This code is provided under the [MIT License](https://opensource.org/licenses/MI
 
 ## Acknowledgments
 - Original code by Nicola Di Paolo.
-- Inspired by J. Audio Eng. Soc., Vol. 60, No. 6, 2012 June, Dimitrios Giannoulis, Michael Massberg, Joshua D. Reiss.
+- Inspired by [J. Audio Eng. Soc., Vol. 60, No. 6, 2012 June](https://www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf), Dimitrios Giannoulis, Michael Massberg, Joshua D. Reiss.
