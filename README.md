@@ -1,7 +1,7 @@
 # Dynamic Compressor for Max/MSP Gen~
 
 ## Overview
-This Max/MSP Gen~ codebox implements a dynamic compressor that adjusts the amplitude of an input signal in real-time, according to the peak level measurement of the incoming signal. It includes the parameters for controlling threshold, ratio, hold time, release time, attack time, gain adjustment, and dry/wet mix trough the GUI interface. The compressor can also function as a peak limiter. Based on feedback design compressor where `reduction = ((sig-T)*(1/r)+T)/sig`.
+This Max/MSP Gen~ codebox implements a dynamic compressor that adjusts the amplitude of an input signal in real-time, according to the peak level measurement of the incoming signal. It includes the parameters for controlling threshold, ratio, hold time, release time, attack time, gain adjustment, and dry/wet mix trough the GUI interface. The compressor can also function as a peak limiter. Based on feedback compressor design.
 
 ## Parameters
 - T (Threshold)
@@ -38,7 +38,8 @@ This Max/MSP Gen~ codebox implements a dynamic compressor that adjusts the ampli
 Download and open in Max MSP.
 
 ## DSP Code
-`//params declaration//
+
+```//params declaration//
 Param T(0.5, min=0.001, max=2);	//Treshold
 Param r(4, min=1, max=60);	//Ratio (if ratio==60 then it works as a peak limiter)
 Param hold(4800, min=1, max=48000);	//hold time
@@ -109,7 +110,9 @@ outSig = mix(in1, procSig, compression) * gain;
 
 //out//
 out1 = outSig;
-out2 = smoothed;`
+out2 = smoothed;
+```
+
 ## Screenshot 
 <img width="292" alt="DynamicCompressor_Screenshot01" src="https://github.com/NicolaNDP/prototypes/assets/145101853/e87dc83e-0bde-4887-846b-e3f950ce591a">
 
@@ -117,4 +120,5 @@ out2 = smoothed;`
 This code is provided under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Acknowledgments
-- Original code by Nicola Di Paolo
+- Original code by Nicola Di Paolo.
+- Inspired by J. Audio Eng. Soc., Vol. 60, No. 6, 2012 June, Dimitrios Giannoulis, Michael Massberg, Joshua D. Reiss.
